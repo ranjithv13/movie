@@ -1,0 +1,73 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div formArrayName="season">
+    <div *ngFor="let item of val.controls let i=index" [formGroupName]="i">
+      <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+
+      <div formArrayName="epi">
+       <div class="bg-secondary" *ngFor="let item of valinside.at(i).controls  let j=index" [formGroupName]="j">
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <input formControlName="ename" type="text" placeholder="Episode Name">
+        <input formControlName="eno" type="text" name="" id="" placeholder="Episode Number">
+        </div>
+        </div>
+         </div>
+    </div>
+       </div>
+       <button (click)="addinside(i)" >Add Episode</button>
+      </div>
+    </div>
+    <button (click)="add()">Add season</button>
+  </div>
+  <button [disabled]="myForm.invalid">Submit</button>
+</form>
+
+
+
+<!-- <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Enter number of inputs:
+      <input type="number" formControlName="numberOfInputs" />
+    </label>
+  </div>
+
+  <div formArrayName="inputsArray">
+    <div *ngFor="let input of inputsArray.controls; let i = index">
+      <label>
+        Input {{ i + 1 }}:
+        <input [formControlName]="i" />
+      </label>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!dynamicForm.valid">Submit</button>
+</form> -->
+
+<!--
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Enter number of inputs:
+      <input type="number" formControlName="number" />
+    </label>
+  </div>
+
+  <div formArrayName="inputsArray">
+    <div *ngFor="let input of inputsArray.controls; let i = index">
+      <label>
+        Input {{ i + 1 }}: -->
+        <!-- <input [formControlName]="i" />
+      </label>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!dynamicForm.valid">Submit</button>
+</form>
+ -->

@@ -1,0 +1,100 @@
+i{
+  cursor: pointer;
+}
+
+@media (max-width:1400px) {
+#sec{
+  width: 75% !important;
+}
+}
+@media (max-width:991px) {
+#row{
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+
+}
+}
+@media (max-width:575px) {
+#row{
+  transform: translateX(-3%);
+}
+}
+
+@media (max-width:400px) {
+#container{
+  font-size: 12px;
+}
+input{
+  font-size: 10px;
+}
+#row{
+  margin-top: -20%;
+
+}
+
+}
+@media (max-width:300px) {
+#container{
+  min-width: 300px;
+}
+
+}
+
+@media (max-width:767px) {
+#col2{
+  display: none;
+}
+#container::before{
+
+display: none ;
+}
+#container{
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+}
+#col1{
+  border-radius: 8px !important;
+}
+}
+
+
+  #container {
+           background-color:rgba(170, 177, 203,0.5);
+           position: relative;
+        }
+
+  #container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42%;
+    height: 100%;
+    // background: linear-gradient(to right,rgba(255, 255, 255, 0.8) 50%, rgb(255, 255, 255) 100%);
+    background: linear-gradient(to left,rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 100%);
+    pointer-events: none;
+
+  }
+
+.offcanvas{
+  // background-color: yellow ;
+  width: 20%;
+}
+.offcanvas-body{
+  // background-color: green !important;
+  background-image: url('/assets/bg.jpg');
+}
+.and{
+  background-color: whitesmoke;
+}
+
+.and:hover{
+  background-color: green !important;
+  color: white !important;
+}
+.an{
+  box-shadow: none;
+}
+
